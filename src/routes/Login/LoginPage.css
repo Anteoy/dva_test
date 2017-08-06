@@ -1,0 +1,185 @@
+
+.LoginWrap {
+  height: 100%;
+  background: #FFFFFF;
+}
+.loginFWrap{
+  position: relative;
+  z-index: 2;
+  background: #FFFFFF;
+}
+.title{
+  margin: 0;
+  padding: 60px 0 0 0;
+  line-height: 50px;
+  text-align: center;
+  font-family: PingFangSC-Semibold;
+  font-size: 36px;
+  color: #5E5E5E;
+  letter-spacing: 0;
+}
+.loginFrom{
+  margin-top: 60px;
+  padding: 0 80px;
+}
+.item{
+  padding:36px 0 32px;
+  border-bottom: 1px solid #E8E8E8;
+}
+.iptWrap{
+  padding-left: 74px;
+  position: relative;
+}
+.icon{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  background: url('./assets/phone.svg') no-repeat center;
+  background-size: 24px 36px;
+}
+.pwdIcon{
+  background: url('./assets/pwd.svg') no-repeat center;
+  background-size: 32px 30px;
+}
+.iptContent{
+  position: relative;
+  font-family: PingFangSC-Regular;
+  font-size: 32px;
+  color: #5E5E5E;
+  letter-spacing: 0;
+  line-height: 48px;
+}
+.ipt{
+  padding: 0;
+  margin: 0;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  border: 0;
+  background: transparent;
+}
+.errInfo{
+  padding: 0;
+  margin: 0;
+  font-family: PingFangSC-Regular;
+  font-size: 24px;
+  color: #FF7171;
+  letter-spacing: 0;
+  line-height: 48px;
+}
+.submitBtn{
+  margin-top: 80px;
+  height: 96px;
+  line-height: 96px;
+  background-image: linear-gradient(270deg, #55E49F 0%, #2BD9A8 100%);
+  border-radius: 50px;
+  border-color: transparent;
+  font-family: PingFangSC-Semibold;
+  font-size: 32px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+}
+.iptContent.iptBtn{
+  padding-right: 20px;
+}
+.dxBtn.on{
+  color: #9B9B9B;
+}
+.dxBtn{
+  position: absolute;
+  width: 200px;
+  background: #F7F7F7;
+  border: 2px solid #F3F3F3;
+  color: #5E5E5E;
+  border-radius: 50px;
+  font-family: PingFangSC-Semibold;
+  font-size: 24px;
+  letter-spacing: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 0;
+  margin: auto;
+}
+
+.modalBG{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #373737;
+  background-color: rgba(55,55,55,.6);
+  height: 100%;
+  z-index: 1000;
+  filter: alpha(opacity=50);
+}
+.modalBox{
+  position: fixed;
+  overflow: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+}
+.modalContent{
+  position: relative;
+  top: 250px;
+  padding: 10px;
+  width: 420px;
+  margin:auto;
+  min-height: 332px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  z-index: 1001;
+}
+.modalIcon{
+  display: block;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  margin: 60px auto 0;
+  background: url('./assets/err.svg') no-repeat center;
+  background-size: 100%;
+}
+.modalP{
+  text-align: center;
+  font-family: PingFangSC-Regular;
+  font-size: 30px;
+  color: #5E5E5E;
+  letter-spacing: 0;
+  padding: 0;
+  margin: 0;
+}
+.modalInfo{
+  margin: 40px auto;
+}
+.modalClose{
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  background: url('./assets/close.svg') no-repeat center;
+  background-size: 100%;
+  width: 20px;
+  height: 20px;
+}
+
+.versionWrap{
+  position: absolute;
+  z-index: 1;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 24px;
+  color: #eee;
+}
+.versionWrap strong{
+  font-size: 24px;
+  font-weight: normal;
+}
