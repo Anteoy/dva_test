@@ -1,0 +1,277 @@
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.ellipsis{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.LoginPage {
+  padding: 0 80px;
+}
+.title{
+  margin-top: 60px;
+  text-align: center;
+  font-family: PingFangSC-Semibold;
+  font-size: 36px;
+  color: #5E5E5E;
+  letter-spacing: 0;
+}
+.loginBox{
+  position: relative;
+  margin-top: 40px;
+  padding-top: 20px;
+  /*background: url('./assets/bg.svg') no-repeat center;*/
+}
+.loginBox:before{
+  position: absolute;
+  top: 0;
+  left: 20px;
+  right: 20px;
+  content: ' ';
+  height: 200px;
+  background: #FFFFFF;
+  border: 2px solid #F3F3F3;
+  box-shadow: 0 1px 20px 0 rgba(0,0,0,0.03);
+  border-radius: 24px;
+  z-index: 1;
+}
+.content{
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  border: 1px solid #F3F3F3;
+  box-shadow: 0 1px 10px 0 rgba(0,0,0,0.03);
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.info{
+  margin: 0;
+  padding: 58px 0 0 0;
+  text-align: center;
+  font-family: PingFangSC-Regular;
+  font-size: 28px;
+  color: #9B9B9B;
+  letter-spacing: 0;
+}
+.infoMin{
+  margin: 0;
+  padding: 10px 0 0 0;
+  text-align: center;
+  font-family: PingFangSC-Regular;
+  font-size: 28px;
+  color: #9B9B9B;
+  letter-spacing: 0;
+}
+.from{
+  margin-top: 70px;
+  padding: 0 80px 76px;
+}
+.item{
+  position: relative;
+  padding-left: 84px;
+  overflow: hidden;
+}
+.item + .item{
+  margin-top: 20px;
+}
+.label{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 68px;
+  line-height: 68px;
+  font-family: PingFangSC-Regular;
+  font-size: 28px;
+  color: #9B9B9B;
+  letter-spacing: 0;
+}
+.iptWrap{
+  position: relative;
+  background: #FFFFFF;
+  border: 1px solid #DEDEDE;
+  border-radius: 6px;
+  height: 68px;
+  line-height: 68px;
+  padding: 0 47px 0 20px;
+  font-family: PingFangSC-Regular;
+  font-size: 32px;
+  color: #5E5E5E;
+  letter-spacing: 0;
+}
+.mr_20{
+  float: left;
+  width: 50%;
+}
+.mr_20 .iptWrap{
+}
+.iptWrap.towWrap{
+  margin-right: 20px;
+}
+.iptWrap.noSj{
+  padding: 0 20px;
+}
+.iptWrap.noSj:after{
+  display: none;
+}
+.iptWrap:after{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 20px;
+  margin: auto;
+  width: 20px;
+  height: 14px;
+  content: '';
+  background: url('./assets/sanjiao.svg') no-repeat center;
+  background-size: 100%;
+}
+.iptWrap.radioWrap{
+  padding: 0;
+  border-color: transparent;
+  margin-right: -20px;
+}
+.radio{
+  float: left;
+  margin-right: 20px;
+}
+.radio input{
+  display: none;
+}
+.checkedIcon{
+  margin-right: 5px;
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #EEEEEE;
+  border: 1px solid #CBCBCB;
+}
+.checkedIcon.checked:after{
+  position: absolute;
+  content: '';
+  width: 16px;
+  height: 16px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background: #1BC47E;
+  border-radius: 50%;
+}
+.iptName{
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: 100%;
+  height: 68px;
+  background: transparent;
+}
+.submitBtn{
+  margin-top: 64px;
+  height: 96px;
+  line-height: 96px;
+  background-image: linear-gradient(270deg, #55E49F 0%, #2BD9A8 100%);
+  border-radius: 50px;
+  border-color: transparent;
+  font-family: PingFangSC-Semibold;
+  font-size: 32px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+}
+.checkBtn{
+  margin-top: 20px;
+  height: 96px;
+  line-height: 96px;
+  border-radius: 50px;
+  border: 1px solid #1BC47E;
+  font-family: PingFangSC-Semibold;
+  font-size: 32px;
+  color: #1BC47E;
+  letter-spacing: 0;
+}
+.toLogin{
+  margin-top: 40px;
+  text-align: center;
+}
+.LoginLink{
+  font-family: PingFangSC-Regular;
+  font-size: 28px;
+  color: #1BC47E;
+  letter-spacing: 0;
+}
+
+.InfoWrap{
+  padding: 80px;
+}
+.InfoWrap>.clearfix + .clearfix{
+  margin-top: 40px;
+}
+.InfoWrap>.clearfix .InfoTitle{
+  margin-bottom: 10px;
+}
+.InfoTitle{
+  font-family: PingFangSC-Regular;
+  font-size: 28px;
+  color: #9B9B9B;
+  letter-spacing: 0;
+}
+.InfoContent{
+  font-family: PingFangSC-Regular;
+  font-size: 32px;
+  color: #5E5E5E;
+  letter-spacing: 0;
+}
+.toastWrap{
+  margin-top: 44px;
+}
+.toastItem{
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  line-height: 34px;
+  font-family: PingFangSC-Regular;
+  font-size: 24px;
+  color: #9B9B9B;
+  letter-spacing: 0;
+}
+.toastItem .LoginLink{
+  font-size: 24px;
+}
+.resultWrap{
+
+}
+.resultIcon{
+  width: 138px;
+  height: 146px;
+  margin: 80px auto 0;
+  background: url('./assets/resultIcon.svg') no-repeat center;
+  background-size: cover;
+}
+.resultInfo{
+  margin-top: 50px;
+  text-align: center;
+  font-family: PingFangSC-Regular;
+  font-size: 32px;
+  color: #4A4A4A;
+  letter-spacing: 0;
+}
+.resultBtns{
+  margin-top: 50px;
+}
+.resultBtns .submitBtn{
+  margin: 15px auto 0;
+  /*float: left;*/
+  width: 260px;
+}
+.Red{
+  font-family: PingFangSC-Semibold;
+  font-size: 32px;
+  color: #FF7171;
+  letter-spacing: 0;
+}
+.Red strong{
+  font-size: 48px;
+}

@@ -38,12 +38,24 @@ export async function login(data) {
 }
 
 /**
- * 验证手机验证码
+ * 更新密码
  * @param data { "phone":"17602887186", "identifyCode":9561 }
  * @returns {Promise.<Object>}
  */
 export async function resetPwd({ query, token }) {
   return request(`${apiURL}/updatePasswd`, {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      'x-access-token': `Bearer ${token}`,
+    },
+    body: JSON.stringify(query),
+  });
+}
+// 查询学生信息
+export async function user({ query, token }) {
+  return request(`${apiURL}/queryStudentInfo`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
