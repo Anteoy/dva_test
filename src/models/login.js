@@ -675,7 +675,13 @@ export default {
 
     },
   },
+  // Store 允许使用store.subscribe方法设置监听函数，一旦 State 发生变化，就自动执行这个函数。
+  // 只要把 View 的更新函数（对于 React 项目，就是组件的render方法或setState方法）放入listen，就会实现 View 的自动渲染。
+
+  // subscription 是订阅，用于订阅一个数据源，然后根据需要 dispatch 相应的 action。在 app.start() 时被执行，数据源可以是当前的时间、服务器的 websocket 连接、keyboard 输入、geolocation 变化、history 路由变化等等。
   subscriptions: {
+    // store.dispatch()是 View 发出 Action 的唯一方法。
+    // store.dispatch接受一个 Action 对象作为参数，将它发送出去. store(包含)自动调用reducer.（接着出发listener（可能dva内置默认，进行自动渲染view））。
     init({ dispatch, history }) {
       return history.listen(({ query, pathname }) => {
         const { token = '' } = query;
