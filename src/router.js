@@ -5,7 +5,6 @@ import NotFound from './routes/NotFound/index.js';
 import User from './routes/User';
 import PnoteIndex from './components/pnote_login';
 
-import Test from './routes/Test.js';
 
 function RouterConfig({ history }) {
   return (
@@ -27,7 +26,6 @@ function RouterConfig({ history }) {
           />
         ) : null
       }
-      <Route path="/test" component={Test} />
     </Router>
   );
 }
