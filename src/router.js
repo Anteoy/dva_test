@@ -3,6 +3,9 @@ import { Router, Route } from 'dva/router';
 import Login from './routes/Login';
 import NotFound from './routes/NotFound/index.js';
 import User from './routes/User';
+import PnoteIndex from './components/pnote_login';
+
+import Test from './routes/Test.js';
 
 function RouterConfig({ history }) {
   return (
@@ -13,6 +16,8 @@ function RouterConfig({ history }) {
       <Route path="/login" component={Login} />
       {/* 已有用户信息 */}
       <Route path="/user" component={User} />
+      {/* pnote 登录 */}
+      <Route path="/pnote_index" component={PnoteIndex} />
       {
         __ENV__ === 'develop' ? (
           <Route
@@ -22,6 +27,7 @@ function RouterConfig({ history }) {
           />
         ) : null
       }
+      <Route path="/test" component={Test} />
     </Router>
   );
 }
