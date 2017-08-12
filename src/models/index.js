@@ -238,7 +238,7 @@ export default {
      * @param call
      * @param put
      */
-      *loginp({ query, _pathname, callback }, { call, put, select }) {
+      *loginp({ query, _pathname, callback, dispatch }, { call, put, select }) {
       try {
         console.log('model login.js...')
         let source = 1;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'dva';
 import classNames from 'classnames';
+import { routerRedux } from 'dva/router';
 import { Toast, Button } from 'antd-mobile';
 import styles from './pnoteLogin.css';
 
@@ -45,6 +46,7 @@ class PnoteIndex extends React.Component {
       _pathname: location.pathname,
       callback() {
         Toast.hide();
+        dispatch(routerRedux.push('/pnote_home'));
       },
     });
   }

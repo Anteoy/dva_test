@@ -4,6 +4,7 @@ import Login from './routes/Login';
 import NotFound from './routes/NotFound/index.js';
 import User from './routes/User';
 import PnoteIndex from './components/pnote_login';
+import PnoteHome from './components/pnote_home';
 
 
 function RouterConfig({ history }) {
@@ -17,6 +18,8 @@ function RouterConfig({ history }) {
       <Route path="/user" component={User} />
       {/* pnote 登录 */}
       <Route path="/pnote_index" component={PnoteIndex} />
+      {/* pnote 主页 */}
+      <Route path="/pnote_home" component={PnoteHome} />
       {
         __ENV__ === 'develop' ? (
           <Route
