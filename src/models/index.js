@@ -1,7 +1,7 @@
 import { routerRedux } from 'dva/router';
 import { Toast } from 'antd-mobile';
 import { setCookie } from '../utils/Cookies';
-import { login, resetPwd, sendCode, user } from '../services/api';
+import { plogin, resetPwd, sendCode, user } from '../services/api';
 
 let checked = false;
 
@@ -238,8 +238,9 @@ export default {
      * @param call
      * @param put
      */
-      *login({ query, _pathname, callback }, { call, put, select }) {
+      *loginp({ query, _pathname, callback }, { call, put, select }) {
       try {
+        console.log('model login.js...')
         let source = 1;
         const { routeQuery } = yield select(({ routing, login }) => {
           return {
@@ -252,22 +253,25 @@ export default {
           source = 2;
         }
         yield put({ type: 'loading', loading: true });
-        const { err, data: res } = yield call(login, {
+        const { err, data: res } = yield call(plogin, {
           ...query,
           source,
         });
-
+        console.log(err)
+        console.log(res)
+        callback && callback();
         yield ({
           type: 'init/reTest',
           payload: {},
         });
         // 判断验证码
         if (err) {
-          throw err;
+          callback && callback();
+          // throw err;
         }
-        if (res.code !== 200) {
-          throw new Error(res.resultMsg);
-        }
+        // if (res.code !== 200) {
+        //   throw new Error(res.resultMsg);
+        // }
         if (res.code === 400) {
           yield put({
             type: 'toast/showToast',
@@ -278,9 +282,9 @@ export default {
           yield put({ type: 'loading', loading: false });
           return;
         }
-        yield put({ type: 'setToken', token: res.token, phone: query.phone });
-        console.log(`__CLASS100TOKEN__:${res.token}`); // eslint-disable-line
-        yield put({ type: 'getUserHook', pathname: _pathname || pathname, token: res.token });
+        // yield put({ type: 'setToken', token: res.token, phone: query.phone });
+        console.log(`diao yong callback!!!`); // eslint-disable-line
+        // yield put({ type: 'getUserHook', pathname: _pathname || pathname, token: res.token });
         callback && callback();
       } catch (e) {
         callback && callback();

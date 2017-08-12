@@ -1,6 +1,7 @@
 import { apiURL } from '../utils/config';
 import request from '../utils/request';
 
+
 export async function loginhook() {
   return request(`${apiURL}/api`);
 }
@@ -27,7 +28,21 @@ export async function sendCode(data) {
  * @returns {Promise.<Object>}
  */
 export async function login(data) {
+  console.log('login,.....')
   return request(`${apiURL}/verifyIdentifyCode`, {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  });
+}
+
+export async function plogin(data) {
+  console.log('plogin,.....')
+  console.log(data)
+  return request('http://localhost:8080/login', {
     method: 'POST',
     headers: {
       Accept: 'application/json',

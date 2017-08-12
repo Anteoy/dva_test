@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'dva';
+import classNames from 'classnames';
+import { Toast, Button } from 'antd-mobile';
 import styles from './pnoteLogin.css';
 
 class PnoteIndex extends React.Component {
@@ -7,10 +9,59 @@ class PnoteIndex extends React.Component {
     username: '',
     passwd: '',
   };
+  handleSubmit = () => {
+    const { username, passwd } = this.state;
+    const { dispatch, location } = this.props;
+    let err = null;
+    if (!username && !err) {
+      err = {
+        content: '请输入用户名',
+      };
+    }
+    if (!passwd && !err) {
+      err = {
+        content: '请输入密码',
+      };
+    }
+    if (err) {
+      dispatch({
+        type: 'toast/showToast',
+        err: {
+          type: 'fail',
+          content: err.content || '请填写完整信息',
+          duration: 1,
+        },
+      });
+      return;
+    }
+
+    Toast.loading('正在登录中···', 0);
+    dispatch({
+      type: 'pnoteLogin/loginp',
+      query: {
+        id: username,
+        passwd: passwd,
+      },
+      _pathname: location.pathname,
+      callback() {
+        Toast.hide();
+      },
+    });
+  }
+  usernameChagne = (e) => {
+    const v = e.target.value;
+    this.setState({
+      username: v,
+    });
+  }
+  pwdChagne = (e) => {
+    const v = e.target.value;
+    this.setState({
+      passwd: v,
+    });
+  }
   render() {
-    const { phone, pwd, hasSet, phoneErr, pwdErr, visible } = this.state;
-    const { login } = this.props;
-    const { ERROR } = login;
+    const { username, passwd } = this.state;
     return (
       <div>
 
@@ -27,16 +78,15 @@ class PnoteIndex extends React.Component {
 
           </ul>
         </div>
-        <div></div>
         <div className={styles.main} >
           <div className={styles.main_container} >
             <div className={styles.loginContent}>
               <span className={styles.firstLogin}>admin or guest 账户登录</span>
               <div >
-                <input type="text" placeholder="用户名" id="username" />
+                <input value={username} onChange={this.usernameChagne} placeholder="用户名" type="text" />
               </div>
               <div >
-                <input type="password" placeholder="密码" id="password"  />
+                <input type="text" value={passwd} onChange={this.pwdChagne} placeholder="密码" />
               </div>
               <div >
                 <input type="checkbox"  className={styles.loginRember} /> <span className={styles.loginRemberWord}>记住密码</span>
@@ -44,6 +94,7 @@ class PnoteIndex extends React.Component {
               <div  className={styles.loginBtn} id="commit" >
                 登&nbsp录
               </div>
+              <Button onClick={this.handleSubmit}  type="primary">登录</Button>
             </div>
           </div>
         </div>
