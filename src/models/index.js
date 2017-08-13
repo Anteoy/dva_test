@@ -238,7 +238,7 @@ export default {
      * @param call
      * @param put
      */
-      *loginp({ query, _pathname, callback, dispatch }, { call, put, select }) {
+      *loginp({ query, _pathname, callback }, { call, put, select }) {
       try {
         console.log('model login.js...')
         let source = 1;
@@ -257,36 +257,39 @@ export default {
           ...query,
           source,
         });
-        console.log(err)
-        console.log(res)
-        callback && callback();
-        yield ({
-          type: 'init/reTest',
-          payload: {},
-        });
-        // 判断验证码
-        if (err) {
-          callback && callback();
-          // throw err;
-        }
-        // if (res.code !== 200) {
-        //   throw new Error(res.resultMsg);
+        console.log(err);
+        console.log(res);
+        query.dispatch(routerRedux.push('/pnote_home'));
+        Toast.hide();
+        // callback && callback();
+        // yield ({
+        //   type: 'init/reTest',
+        //   payload: {},
+        // });
+        // // 判断验证码
+        // if (err) {
+        //   callback && callback();
+        //   // throw err;
         // }
-        if (res.code === 400) {
-          yield put({
-            type: 'toast/showToast',
-            err: {
-              pwd: true,
-            },
-          });
-          yield put({ type: 'loading', loading: false });
-          return;
-        }
-        // yield put({ type: 'setToken', token: res.token, phone: query.phone });
-        console.log(`diao yong callback!!!`); // eslint-disable-line
-        // yield put({ type: 'getUserHook', pathname: _pathname || pathname, token: res.token });
-        callback && callback();
+        // // if (res.code !== 200) {
+        // //   throw new Error(res.resultMsg);
+        // // }
+        // if (res.code === 400) {
+        //   yield put({
+        //     type: 'toast/showToast',
+        //     err: {
+        //       pwd: true,
+        //     },
+        //   });
+        //   yield put({ type: 'loading', loading: false });
+        //   return;
+        // }
+        // // yield put({ type: 'setToken', token: res.token, phone: query.phone });
+        // console.log(`diao yong callback!!!`); // eslint-disable-line
+        // // yield put({ type: 'getUserHook', pathname: _pathname || pathname, token: res.token });
+        // callback && callback();
       } catch (e) {
+        console.log(e)
         callback && callback();
         yield put({
           type: 'toast/showToast',

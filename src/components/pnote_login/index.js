@@ -42,12 +42,13 @@ class PnoteIndex extends React.Component {
       query: {
         id: username,
         passwd: passwd,
+        dispatch,
       },
       _pathname: location.pathname,
-      callback() {
-        Toast.hide();
-        dispatch(routerRedux.push('/pnote_home'));
-      },
+      // callback() {
+      //   Toast.hide();
+      //   dispatch(routerRedux.push('/pnote_home'));
+      // },
     });
   }
   usernameChagne = (e) => {
