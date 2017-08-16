@@ -79,6 +79,7 @@ class PnoteHome extends React.Component {
     );
   }
 }
+// react redux connect
 function mapStateToProps(state) {
   return state;
 }
