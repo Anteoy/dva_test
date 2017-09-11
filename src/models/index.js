@@ -13,7 +13,7 @@ export default {
     grade: '',
     stuInfoStatus: -10000,
     user: {},
-    source: 1, // 1 未知用户来源(以往用户) 1 具有学校资料的用户 2不具有学校资料的用户
+    source: 1,
     orderId: '',
     backURL: '',
     payFlag: 1,
@@ -30,7 +30,7 @@ export default {
         // alert('setBackURL' + '     ' + JSON.stringify({ ...state, backURL }));
         return { ...state, backURL };
       }
-      return state;
+      return { ...state, backURL };
     },
     setStuInfoStatus(state, { stuInfoStatus }) {
       // alert('setStuInfoStatus' + '     ' + JSON.stringify( { ...state, stuInfoStatus }));
@@ -689,15 +689,15 @@ export default {
   subscriptions: {
     // store.dispatch()是 View 发出 Action 的唯一方法。
     // store.dispatch接受一个 Action 对象作为参数，将它发送出去. store(包含)自动调用reducer.（接着出发listener（可能dva内置默认，进行自动渲染view））。
-    init({ dispatch, history }) {
-      return history.listen(({ query, pathname }) => {
-        const { token = '' } = query;
-        if (token) {
-          dispatch({ type: 'setToken', token });
-        }
-        dispatch({ type: 'loginHook', pathname, query });
-      });
-    },
+    // init({ dispatch, history }) {
+    //   return history.listen(({ query, pathname }) => {
+    //     const { token = '' } = query;
+    //     if (token) {
+    //       // dispatch({ type: 'setToken', token });
+    //     }
+    //     // dispatch({ type: 'loginHook', pathname, query });
+    //   });
+    // },
   },
 };
 
