@@ -1,5 +1,0 @@
-1. <input type="text" value={username} placeholder="用户名" />
-   value={username}  引起不能输入问题
-   react https://segmentfault.com/q/1010000008144015 重点是不报错 不报错 不方便定位错误所在
-2. model src/index.js 注册 使dispatch生效
-3. src/router注册时 需要import 否则无效
